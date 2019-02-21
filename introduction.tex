@@ -9,15 +9,30 @@ de análise de sistemas. Ela foi desenvolvida de forma que o usuário possa
 utilizar a linguagem \textit{Python} para escrever seus controladores.
 
 Os dois principais objetivos da plataforma é rodar em um \textit{hardware} com
-baixo poder processamento, como o \textit{Raspberry Pi} e exibir gráficos em
-tempo real. Para isso ela foi dividida em dois aplicativos. O primeiro, denominado
-\textbf{moirai}, deve ser instalado na máquina que faz interface com o
-\textit{hardware} e funciona como um servidor. O segundo, \textbf{Lachesis},
-funciona como cliente e é a inteface gráfica que será utilizada pelo usuário
-para gerenciar os teste e realizar configurações.
+baixo poder processamento, como o \textit{Raspberry Pi}, e exibir gráficos em
+tempo real. Para isso ela foi dividida em dois aplicativos, visando distribuir o
+processamento. O primeiro, denominado \textbf{moirai}, deve ser instalado na
+máquina que faz interface com o \textit{hardware} e funciona como um servidor. O
+segundo, \textbf{Lachesis}, funciona como cliente e é a inteface gráfica que
+será utilizada pelo usuário para gerenciar os teste e realizar configurações.
 
-\section{Instalação}
+A divisão em dois aplicativos faz com que o processamento de dados e exibição de
+gráficos ocorra no computador do usuário, enquanto o processamento do
+controlador ocorre na máquina próxima ao hardware. Os aplicativos se comunicam
+por rede, logo o usuário pode utilizar o \textbf{Lachesis} em sua máquina
+pessoal enquanto o \textbf{moirai} roda em um \textit{Raspberry Pi}.
+
+Em um exemplo de aplicação podemos ter o usuário utilizando seu computador
+pessoal, que se comunica com um \textit{Raspberry Pi} que controla um processo
+através de um CLP --- computador lógico programável. Também é possível ter ambos
+aplicativos na mesma máquina controlando uma planta através de
+\textit{Arduinos}.
+
+\section{Instalação}%
 \label{sec:installation}
+
+\subsection{Python}%
+\label{subsec:install-python}
 
 O \textbf{moirai} é escrito em \textit{Python} e requer que o mesmo esteja
 instalado na máquina. Há várias maneiras de se obter o interpretador
@@ -48,6 +63,9 @@ Seguem as maneiras mais fáceis de se instalar no Windows, Ubuntu e macOS:
         \mintinline{bash}{pip3 install numpy matplotlib}
 \end{itemize}
 
+\subsection{Moirai}%
+\label{subsec:install-moirai}
+
 Após instalado o \textit{Python}, deve-se instalar o \textbf{moirai} utilizando
 o gerenciador de pacotes \textit{pip}. Para isso basta executar em um terminal:
 
@@ -73,7 +91,18 @@ para o aplicativo, que será necessária para realizar a conexão pelo
 substituindo 1234 pela senha desejada.
 
 Para executar o aplicativo, simplesmente digite \mintinline{bash}{moirai} em um
-terminal.
+terminal. A mensagem \enquote{Connected webapi to Hardware} indica que o
+aplicativo está pronto para processar conexões. Para sair do aplicativo, clique
+na janela do terminal e precione CTRL+C.
+
+\subsection{Lachesis}%
+\label{subsec:install-lachesis}
+
+O Lachesis é distribuído na forma de instalador e aplicativo. Para Windows e
+macOS, vá para a página \url{https://github.com/acristoffers/Lachesis/releases}
+e baixe a versão mais atual (\textit{.exe} para Windows, \textit{.dmg} para
+macOS). Para Linux, execute o comando \mintinline{bash}{snap install lachesis}
+em um terminal.
 
 % \FloatBarrier
 % \begin{figure}[ht!]
