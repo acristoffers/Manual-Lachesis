@@ -6,7 +6,7 @@
 
 A plataforma de controle foi desenvolvida para auxiliar no ensino de controle e
 de análise de sistemas. Ela foi desenvolvida de forma que o usuário possa
-utilizar a linguagem Python para escrever seus controladores.
+utilizar a linguagem \textit{Python} para escrever seus controladores.
 
 Os dois principais objetivos da plataforma é rodar em um \textit{hardware} com
 baixo poder processamento, como o \textit{Raspberry Pi} e exibir gráficos em
@@ -15,6 +15,65 @@ tempo real. Para isso ela foi divida em dois aplicativos. O primeiro, denominado
 \textit{hardware} e funciona como um servidor. O segundo, \textbf{Lachesis},
 funciona como cliente e é a inteface gráfica que será utilizada pelo usuário
 para gerenciar os teste e realizar as configurações.
+
+\section{Instalação}
+\label{sec:installation}
+
+O \textbf{moirai} é escrito em \textit{Python} e requer que o mesmo esteja
+instalado na máquina. Há várias maneiras de se obter o interpretador
+\textit{Python}. Ele pode ser baixado diretamente do site
+\href{https://www.python.org}{python.org}, instalado pelo gerenciador de pacotes
+do seu sistema operacional (apt, yum, brew, etc), instalado por gerenciadores de
+versão (\href{https://github.com/pyenv/pyenv}{pyenv}) ou por uma suíte
+(\href{https://www.continuum.io/downloads}{Anaconda}).
+
+Este último é necessário na plataforma Windows já que não há binários para esta
+plataforma no repositório \textit{PyPi} e a compilação é extremamente difícil
+devido a falta de suporte das bibliotecas usadas pela suíte \textit{SciPy}.
+
+Seguem as maneiras mais fáceis de se instalar no Windows, Ubuntu e macOS:
+
+\begin{itemize}
+\item \textbf{Windows}
+        Baixe e instale o \textit{bundle} Anaconda
+        (\url{https://www.continuum.io/downloads}, também disponível para outras
+        plataformas).
+
+\item \textbf{Ubuntu}
+        \mintinline{bash}{sudo apt install python3-scipy python3-matplotlib}
+
+\item \textbf{macOS}
+        Instale o Homebrew: \url{https://brew.sh}\\
+        \mintinline{bash}{brew install python3}\\
+        \mintinline{bash}{pip3 install numpy matplotlib}
+\end{itemize}
+
+Após instalado o \textit{Python}, deve-se instalar o \textbf{moirai} utilizando
+o gerenciador de pacotes \textit{pip}. Para isso basta executar em um terminal:
+
+\mintinline{bash}{pip3 install moirai}
+
+O aplicativo depende de um banco de dados (\textit{MongoDB} ou \textit{MySQL})
+e, caso deseje-se utilizar o PLC da Siemens, da biblioteca \textit{Snap7}. A
+instalação desses foi inserida como opção no aplicativo, e pode-se executá-la
+através do comando:
+
+\mintinline{bash}{moirai --install --sudo}
+
+Os aplicativos serão baixados e instalados conforme necessário. Caso a
+instalação falhe, uma mensagem de erro será exibida mostrando qual software não
+pôde ser instalado e pedindo que a instalação manual seja realizada.
+
+Uma vez que as dependências tenham sido instaladas, deve-se configurar uma senha
+para o aplicativo, que será necessária para realizar a conexão pelo
+\textbf{Lachesis}. Para isso execute
+
+\mintinline{bash}{moirai --set-password=1234}
+
+substituindo 1234 pela senha desejada.
+
+Para executar o aplicativo, simplesmente digite \mintinline{bash}{moirai} em um
+terminal.
 
 % \FloatBarrier
 % \begin{figure}[ht!]
