@@ -1,0 +1,72 @@
+% !TeX program = xelatex
+% !TeX encoding = UTF-8 Unicode
+% !BIB program = biber
+
+\input{meta.tex}
+\input{cefetpagestyle.tex}
+\selectlanguage{brazil}
+
+\def\projeto{%
+  Manual da Plataforma Para Controle de Processos
+}
+
+\titulo{\huge{Manual da Plataforma Para Controle de Processos}\\~\\\tiny{\projeto}}
+\autor{Samuel Oliveira Milagre\\Márcio Ribeiro de Oliveira Filho\\Álan Crístoffer e Sousa}
+\data{\displaydate{date}}
+\instituicao{CEFET-MG}
+\local{Divinópolis}
+\date{2019}
+
+\renewcommand{\orientador}{Álan Crístoffer e Sousa}
+\newcommand\ano{2019}
+
+\hypersetup{
+  unicode    = true,
+  pdftitle   = {Manual da Plataforma Para Controle de Processos},
+  pdfsubject = {Manual da Plataforma Para Controle de Processoss},
+  pdfauthor  = {Samuel Oliveira Milagre, Márcio Ribeiro de Oliveira Filho, Álan Crístoffer e Sousa}
+}
+
+\addbibresource{bibliothek.bib}
+
+\begin{document}
+  \selectlanguage{brazil}
+  \pretextual{}
+
+  \input{titlepage.tex}
+  \imprimirfolhaderosto{}
+
+  \textual{}
+  \pagestyle{cefetchapter}
+  \pagenumbering{roman}
+ 
+  \pdfbookmark[0]{\contentsname}{toc}
+  \tableofcontents*
+  \cleardoublepage{}
+
+  \pagenumbering{arabic}
+  \pagestyle{cefet}
+  \aliaspagestyle{chapter}{cefetchapter}
+
+  \input{introduction.tex}
+  \cleardoublepage{}
+  \input{chapter2.tex}
+  \cleardoublepage{}
+  \input{chapter3.tex}
+  \cleardoublepage{}
+  \input{chapter4.tex}
+  \cleardoublepage{}
+  \input{chapter5.tex}
+  \cleardoublepage{}
+  \input{chapter6.tex}
+  \cleardoublepage{}
+  \input{chapter7.tex}
+  \cleardoublepage{}
+  \input{chapter8.tex}
+  \cleardoublepage{}
+  \input{chapter9.tex}
+  \cleardoublepage{}
+
+  \nocite{*}
+  \printbibliography{}
+\end{document}

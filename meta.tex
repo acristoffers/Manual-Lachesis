@@ -1,0 +1,85 @@
+% !TeX root = document.tex
+% !TeX encoding = UTF-8 Unicode
+
+\documentclass[sumario=tradicional,
+	12pt,
+	openright,
+	twoside,
+	a4paper,
+	english,
+	french,
+	brazil]{abntex2}
+
+% Basics packages
+\usepackage[brazil]{babel}
+\usepackage[nodayofweek,level]{datetime} % date/time formatting
+\usepackage[style=ieee]{biblatex}
+\usepackage{setspace} % Control line height
+\usepackage[decimalsymbol=comma,
+	input-complex-roots=j,
+	output-complex-root=j,
+	complex-root-position=after-number,
+	loctolang={BR:portuguese,UK:english}]{siunitx} % SI units
+%\edef\pdfcreationdate {\pdffeedback creationdate} % fixes datetime import in LuaLaTeX and XeLaTeX
+\usepackage[top=3cm,bottom=2cm,left=3cm,right=2cm]{geometry}
+
+% Image manipulation
+\usepackage{graphicx} % For images
+\usepackage{epstopdf} % SVG, EPS, a.m to PDF
+\usepackage{rotate} % To rotate images
+\usepackage[section]{placeins} % Prevents figures from floating to wrong places
+
+% Math related
+\usepackage{amsmath} % Mathematic symbols and stuff
+\usepackage{amsfonts} % Mathematical fonts
+\usepackage{cancel} % In math mode, variables to strike
+\usepackage{subscript} % For subscript
+
+% Table manipulation
+\usepackage{longtable} % For long tables that take more than one page
+\usepackage{multirow} % Multirow tables
+\usepackage{tabulary} % Table tabulation
+\usepackage{array}
+\newcolumntype{L}{>{\centering\arraybackslash}m{5cm}}
+
+% Set font in LuaLaTeX and XeLaTeX. Does not work in PDFLaTeX
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+%\setmainfont{Arial}
+%\setmonofont{Consolas}
+\renewcommand{\baselinestretch}{1.5} % Line height of 1.5
+
+% Utilities
+\usepackage[usenames,dvipsnames]{xcolor} % More colors:
+\usepackage[section]{minted} % Code highlighting with Pygments
+\usepackage{pdfpages} % Advanced PDF importing
+\usepackage{pdflscape} % One page panorama
+\usepackage[european,cuteinductors,smartlabels]{circuitikz} % For circuits
+\usepackage{indentfirst} % Indents first paragraph after section
+\usepackage{chngcntr} % Change numberings
+\usepackage{csquotes} % \enquote
+\usepackage{url}
+\usepackage{ragged2e} % Justify
+\usepackage{lastpage}
+\usepackage{fancyhdr} % Set headers and footers
+\usepackage[Lenny]{fncychap} % Square chapter
+
+\renewcommand{\rm}{\textrm} % needed with memoir
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter. \ #1}{ }}
+\renewcommand{\sectionmark}[1]{\markright{\thesection. \ #1}}
+\renewcommand{\tocheadstart}{\rm}
+\renewcommand{\ABNTEXchapterfont}{\rm}
+\renewcommand{\ABNTEXchapterfontsize}{\huge}
+\ChTitleVar{\ABNTEXchapterfontsize\ABNTEXchapterfont}
+\setsecheadstyle{\bfseries\Large}
+
+% Removes red boxes when lexer can't understand something (like @ in Python 3)
+\AtBeginEnvironment{minted}{\renewcommand{\fcolorbox}[4][]{#4}}
+
+% pythoncode environment for hightlight
+\newminted{python}
+{autogobble,linenos,python3,fontseries=Consolas,fontsize=\scriptsize,frame=lines}
+
+% ccode environment for highlight
+\newminted{c}
+{autogobble,linenos,fontseries=Consolas,fontsize=\scriptsize,frame=lines}
