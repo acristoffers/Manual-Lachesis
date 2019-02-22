@@ -1,5 +1,40 @@
 % !TeX root = document.tex
 % !TeX encoding = UTF-8 Unicode
 
-\chapter{Estruturas de Dados}%
-\label{chapter:data-structures}
+\chapter{Configuração de Hardware}%
+\label{chapter:hardware-configuration}
+
+Na seção \textit{Configuração de Hardware} é feito a configuração do driver, que
+controla o hardware. Esse driver pode ser: snap7, Arduino, GenericTCPIO, Dummy,
+Oven. Para mais informações sobre driver, acesse: <...> Além disso, é feito as
+configurações das portas de entradas ou saídas do sistema. Entre essas
+configurações está:
+
+\begin{itemize}
+    \item Nome da porta
+    \item Alias da porta (nome que a variavel dentro do programa)
+    \item Tipo de porta: analógica ou digital
+    \item Valor desligado (valor que deve assumir quando o sistema está desligado)
+\end{itemize}
+
+O Alias da porta é o nome dado para a porta no aplicativo. O tipo de porta
+varia de acordo com a escolha do driver. Para incluir uma porta, deve-se clicar
+no opção “Adicionar” no tópico de portas dentro da seção configuração de
+hardware. Para remover, é necessário clicar na opção “Remover” localizada na
+frente da porta que deseja ser excluída. O Valor desligado é o valor que a
+porta deve assumir quando o sistema está desativado.
+
+No tópico de Calibração dessa seção é feita a calibração das portas. A porta
+recebe o nome definido em Alias da porta. O "valor" da porta não é o mesmo,
+logo, precisa de um novo Alias. Os valores inseridos na Calibração Estática
+devem ser calculados por meio de experimentos e testes nas portas.
+
+No tópico Intertravamento é possível realizar prevenção no sistema para evitar
+falhas. Exemplo disso é o Intertravamento em um sistema de tanques
+comunicantes, caso o nível de água ultrapasse 70 centímetros, o teste é parado
+e a variável SystemOnOff assume valor zero, desligando o sistema.
+	
+No final da seção de Configuração de Hardware há opções de exportar, importar
+ou reinicializar configurações de hardware para ou de um arquivo. Ainda há a
+opção de reinicializar o formulário. Para ativar uma configuração nova é
+necessário clicar na opção “Aplicar” no final da seção.
