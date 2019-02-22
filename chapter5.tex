@@ -1,5 +1,9 @@
 % !TeX root = document.tex
 % !TeX encoding = UTF-8 Unicode
 
-\chapter{Funções}%
-\label{chapter:functions}
+\chapter{Controle do Sistema}%
+\label{chapter:controle-do-sistema}
+
+Na seção Controle do Sistema é adicionado códigos que irão atuar como controladores da planta. Para adicionar um controlador, é necessário clicar em “Adicionar” e configurar um formulário. Nesse formulário deve ser especificado o nome do controlador, o tempo de amostragem (em segundos), o tempo total de execução (em segundos) e os sensores que devem ser lidos. Além disso, há a necessidade de desenvolver o código que será executado pelo controlador. Esse código é divido em 3 partes: Antes, Controlador e Depois. É no código Antes que deve ser calculados variáveis que permaneceram constantes durante o teste, como kp, ki e kd. O Controlador deve ser inserido o código que será executado nos intervalos de amostragens. O Depois é o código que será executado depois do Controlador, mesmo se algo der errado.
+
+Na tela da seção Controle do Sistema é listado todas as configurações de controladores. Para executar um controlador, deve-se clicar em “Executar”. Para editar um teste já definido, deve-se clicar em Editar. Para fazer uma cópia, deve-se clicar em Clonar. 
