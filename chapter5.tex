@@ -7,14 +7,14 @@
 Esse módulo permite que o usuário escreva testes utilizando a linguagem de
 programação \textit{Python}. Dessa forma o usuário tem total liberdade para
 controlar as saídas do sistema, e, por dispor de uma linguagem de programação
-completa, possibilita o desenvolvimento de qualquer controlador. Embora ideal
-para controle em malha fechada, também é útil para criar sinais complexos para a
-malha aberta, além de permitir a aplicação de sinais diferentes em portas
+completa, possibilita o desenvolvimento de qualquer tipo de controlador. Embora
+ideal para controle em malha fechada, também é útil para criar sinais complexos
+para a malha aberta, além de permitir a aplicação de sinais diferentes em portas
 diferentes.
 
 A tela inicial do módulo, representada na Figura~\ref{fig:control1}, lista os
-controladores salvos. As opções são as mesmas presentes no módulo Resposta do
-Sistema (Capítulo~\ref{chapter:system-response}).
+controladores salvos. As opções são as mesmas presentes no módulo
+\textit{Resposta do Sistema} (Capítulo~\ref{chapter:system-response}).
 
 \begin{figure}[ht!]
     \centering
@@ -25,10 +25,11 @@ Sistema (Capítulo~\ref{chapter:system-response}).
 
 Ao clicar em \textit{Adicionar} ou em \textit{Editar}, uma nova interface
 (Figura~\ref{fig:control2}) se abre permitindo a edição do teste. No topo temos
-os campos \textit{Nome}, assim como em \textit{Resposta do Sistema} e sendo
-pertinente as mesmas recomendações, \textit{Tempo de amostragem} e \textit{Tempo
-total de execução}, que é o tempo máximo que o teste será executado. O mesmo
-pode ser interrompido precocemente por motivos de erro ou intertravamento.
+os campos \textit{Nome} --- assim como em \textit{Resposta do Sistema} e sendo
+pertinente as mesmas recomendações --- \textit{Tempo de amostragem} e
+\textit{Tempo total de execução}, que é o tempo máximo que o teste será
+executado. O mesmo pode ser interrompido precocemente por motivos de erro ou
+intertravamento.
 
 \begin{figure}[ht!]
     \centering
@@ -43,9 +44,9 @@ código. Isso evita ler informações desnecessárias e agiliza a execução do
 código.
 
 No campo \textit{Antes}, visto na Figura~\ref{fig:control3}, podemos inserir o
-código que será executado uma vez antes do controlador iniciar. Esse campo é
-ideal para calcular ganhos estáticos (como observadores ou \textit{MPC}) e para
-salvar informações constantes e valores iniciais, como \(K_p\) ou \(x_0\).
+código que será executado, uma vez, antes do controlador iniciar. Esse campo é
+ideal para calcular ganhos estáticos (como de observadores ou \textit{MPC}) e
+para salvar informações constantes e valores iniciais, como \(K_p\) ou \(x_0\).
 
 \begin{figure}[ht!]
     \centering
@@ -63,11 +64,11 @@ Algumas variáveis estão disponíveis nesse campo que o usuário pode fazer uso
                           logo podemos ler seu valor acessando
                           \mintinline{python}{inputs['S9']}.
     \item \textbf{outputs} um dicionário inicialmente vazio. Ao fim da execução
-                           desse bloco todas as saídas que forem adicionadas a
+                           desse bloco, todas as saídas que forem adicionadas a
                            esse dicionário serão aplicadas no \textit{hardware}.
                            Por exemplo, para ligar a bomba 1 de um sistema,
                            configrada em \textit{Configurações de Hardware} como
-                           \textit{Pump1PC} com 40\% de potência, podemos
+                           \textit{Pump1PC}, com 40\% de potência, podemos
                            utilizar o código
                            \mintinline{python}{outputs['Pump1PC'] = 40}.
     \item \textbf{s} variável de estado. Essa variável é um dicionário e estará
@@ -115,8 +116,8 @@ campo, além de:
 
 No campo \textit{Depois} (Figura~\ref{fig:control5}) pode-se inserir código para
 desligar o sistema. Esse campo será executado em caso de erro ou caso o teste
-execute até o final. Apenas a variável \textit{outputs} está disponível nesse
-campo.
+execute até o final. As variáveis \textit{inputs}, \textit{outputs},
+\textit{math} e \textit{np} estão disponível nesse campo.
 
 \begin{figure}[ht!]
     \centering
@@ -127,9 +128,9 @@ campo.
 
 O pseudo-código abaixo representa o funcionamento do programa, como se os campos
 fossem funções. Obviamente a implementação real é bem mais complexa. Deve-se
-chamar atenção ao fato que o controlador será executado sempre num tempo
-múltiplo de \textit{dt}. O cálculo do tempo de espera leva em conta o tempo que
-foi necessário para executar o código, e sempre aguardará para iniciar a próxima
+atentar ao fato que o controlador será executado sempre num tempo múltiplo de
+\textit{dt}. O cálculo do tempo de espera leva em conta o tempo que foi
+necessário para executar o código, e sempre aguardará para iniciar a próxima
 execução em um múltiplo. Se o tempo de execução do código for menor que
 \textit{dt}, então o código sempre executará em \textit{k*dt} segundos. Se o
 código levar mais de \textit{dt} segundos para executar, a próxima execução será

@@ -12,13 +12,13 @@ necessário informar apenas o \textit{IP} e a porta onde o \textbf{moirai} está
 escutando, esperando por conexões.
 
 Para determinar o \textit{IP} de uma máquina pode-se usar o comando
-\mintinline{bash}{ifconfig} no Linux ou macOS e \mintinline{bash}{ipconfig} no
-Windows. Caso o computador esteja ligado a mais de uma rede, como \textit{WiFi}
-e \textit{Ethernet} (rede cabeada), deve-se prestar atenção a qual endereço
-pertence a qual rede físisca. Os endereços especiais \textit{localhost} e
-\textit{127.0.0.1} apontam para a própria máquina, assim , se usado no
-\textbf{Lachesis}, ele tentará encontrar o \textbf{moirai} na mesma máquina em
-que ele se encontra instalado.
+\mintinline{bash}{ifconfig} no \textit{Linux} ou \textit{macOS} e
+\mintinline{bash}{ipconfig} no \textit{Windows}. Caso o computador esteja
+ligado a mais de uma rede, como \textit{WiFi} e \textit{Ethernet} (rede
+cabeada), deve-se prestar atenção a qual endereço pertence a qual rede físisca.
+Os endereços especiais \textit{localhost} e \textit{127.0.0.1} apontam para a
+própria máquina, assim , se usado no \textbf{Lachesis}, ele tentará encontrar o
+\textbf{moirai} na mesma máquina em que ele se encontra instalado.
 
 É necessário especificar a porta de conexão, mas essa será sempre \textit{5000},
 a não ser que algum \textit{proxy} ou redirecionamento de porta seja empregado.
@@ -75,5 +75,5 @@ não tenham sido salvos em \textit{backup}.
 
 Como o \textit{backup} salva o banco de dados inteiro, os testes realizados
 também são salvos. Essa opção pode então ser utilizada para remover dados do
-banco, acelerando o aplicativo, sem perder dados. Também pode ser realizada para
+banco, acelerando o aplicativo, sem perder dados. Também pode ser utilizada para
 migrar o \textbf{moirai} de uma máquina pra outra.

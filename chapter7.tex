@@ -31,7 +31,11 @@ ignorado.
 Assim, considerando um sistema discreto com \(\delta{}t=5\) segundos, podemos
 definir um sinal de controle em rampa de 0 a 100 e retornando a zero como:
 
-\mintinline{python}{[*range(100,5),*range(100,0,-5)]}
+\mintinline{python}{[*range(0,100,5),*range(100,0,-5)]}.
+
+Tal sinal de controle aplica uma variação de 5 a cada amostragem, e tem duração
+de \mintinline{python}{len([*range(0,100,5),*range(100,0,-5)]) * dt}, no caso,
+200 segundos.
 
 Os campos \textit{Modelo}, \textit{x0} e \textit{U} aceitam código
 \textit{Python} como entrada, como pode ser visto exemplo anterior. Como a

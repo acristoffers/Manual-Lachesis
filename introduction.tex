@@ -20,7 +20,8 @@ A divisão em dois aplicativos faz com que o processamento de dados e exibição
 gráficos ocorra no computador do usuário, enquanto o processamento do
 controlador ocorre na máquina próxima ao hardware. Os aplicativos se comunicam
 por rede, logo o usuário pode utilizar o \textbf{Lachesis} em sua máquina
-pessoal enquanto o \textbf{moirai} roda em um \textit{Raspberry Pi}.
+pessoal enquanto o \textbf{moirai} roda em um \textit{Raspberry Pi}, por
+exemplo.
 
 Em um exemplo de aplicação podemos ter o usuário utilizando seu computador
 pessoal, que se comunica com um \textit{Raspberry Pi} que controla um processo
@@ -34,31 +35,33 @@ aplicativos na mesma máquina controlando uma planta através de
 \subsection{Python}%
 \label{subsec:install-python}
 
-O \textbf{moirai} é escrito em \textit{Python} e requer que o mesmo esteja
+O \textbf{moirai} é escrito em \textit{Python 3} e requer que o mesmo esteja
 instalado na máquina. Há várias maneiras de se obter o interpretador
 \textit{Python}. Ele pode ser baixado diretamente do site
-\href{https://www.python.org}{python.org}, instalado pelo gerenciador de pacotes
-do seu sistema operacional (apt, yum, brew, etc), instalado por gerenciadores de
-versão (\href{https://github.com/pyenv/pyenv}{pyenv}) ou por uma suíte
-(\href{https://www.continuum.io/downloads}{Anaconda}).
+\url{https://www.python.org}, instalado pelo gerenciador de pacotes do seu
+sistema operacional (\textit{apt}, \textit{dnf}, \textit{brew}, etc), instalado
+por gerenciadores de versão
+(\href{https://github.com/pyenv/pyenv}{\textit{pyenv}}) ou por uma suíte
+(\href{https://www.continuum.io/downloads}{\textit{Anaconda}}).
 
-Este último é necessário na plataforma Windows já que não há binários para esta
-plataforma no repositório \textit{PyPi} e a compilação é extremamente difícil
-devido a falta de suporte das bibliotecas usadas pela suíte \textit{SciPy}.
+Este último é necessário na plataforma \textit{Windows} já que não há binários
+para esta plataforma no repositório \textit{PyPi} para várias bibliotecas
+utilizadas para controle e a compilação é extremamente difícil devido a falta de
+suporte das bibliotecas usadas pela suíte \textit{SciPy}.
 
-Seguem as maneiras mais fáceis de se instalar no Windows, Ubuntu e macOS:
+Seguem as maneiras mais fáceis de se instalar o \textit{Python} no
+\textit{Windows}, \textit{Ubuntu} e \textit{macOS}\@:
 
 \begin{itemize}
 \item \textbf{Windows}
-        Baixe e instale o \textit{bundle} Anaconda
-        (\url{https://www.continuum.io/downloads}, também disponível para outras
-        plataformas).
+        Baixe e instale o \textit{bundle}
+        \href{https://www.continuum.io/downloads}{\textit{Anaconda}}.
 
 \item \textbf{Ubuntu}
         \mintinline{bash}{sudo apt install python3-scipy python3-matplotlib}
 
 \item \textbf{macOS}
-        Instale o Homebrew: \url{https://brew.sh}\\
+        Instale o \textit{Homebrew}: \url{https://brew.sh}\\
         \mintinline{bash}{brew install python3}\\
         \mintinline{bash}{pip3 install numpy matplotlib}
 \end{itemize}
@@ -71,16 +74,19 @@ o gerenciador de pacotes \textit{pip}. Para isso basta executar em um terminal:
 
 \mintinline{bash}{pip3 install moirai}
 
-O aplicativo depende de um banco de dados (\textit{MongoDB} ou \textit{MySQL})
-e, caso deseje-se utilizar o PLC da Siemens, da biblioteca \textit{Snap7}. A
-instalação desses foi inserida como opção no aplicativo, e pode-se executá-la
-através do comando:
+O aplicativo depende de um banco de dados
+(\href{https://www.mongodb.com/}{\textit{MongoDB}} ou
+\href{https://www.mysql.com/}{\textit{MySQL}}) e, caso deseje-se utilizar o CLP
+da \textit{Siemens}, da biblioteca
+\href{http://snap7.sourceforge.net/}{\textit{Snap7}}. A instalação desses foi
+inserida como opção no aplicativo, e pode-se executá-la através do comando:
 
 \mintinline{bash}{moirai --install --sudo}
 
 Os aplicativos serão baixados e instalados conforme necessário. Caso a
-instalação falhe, uma mensagem de erro será exibida mostrando qual software não
-pôde ser instalado e pedindo que a instalação manual seja realizada.
+instalação falhe, uma mensagem de erro será exibida mostrando qual
+\textit{software} não pôde ser instalado e pedindo que a instalação manual seja
+realizada.
 
 Uma vez que as dependências tenham sido instaladas, deve-se configurar uma senha
 para o aplicativo, que será necessária para realizar a conexão pelo
@@ -98,8 +104,9 @@ na janela do terminal e precione CTRL+C.
 \subsection{Lachesis}%
 \label{subsec:install-lachesis}
 
-O Lachesis é distribuído na forma de instalador e aplicativo. Para Windows e
-macOS, vá para a página \url{https://github.com/acristoffers/Lachesis/releases}
-e baixe a versão mais atual (\textit{.exe} para Windows, \textit{.dmg} para
-macOS). Para Linux, execute o comando \mintinline{bash}{snap install lachesis}
-em um terminal.
+O \textbf{Lachesis} é distribuído na forma de instalador e aplicativo. Para
+\textit{Windows} e \textit{macOS}, vá para a página
+\url{https://github.com/acristoffers/Lachesis/releases} e baixe a versão mais
+atual (\textit{.exe} para \textit{Windows}, \textit{.dmg} para \textit{macOS}).
+Para Linux, execute o comando \mintinline{bash}{snap install lachesis} em um
+terminal.

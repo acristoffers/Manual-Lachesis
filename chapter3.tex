@@ -25,11 +25,11 @@ utilizando o seguinte comando:
 A variável de ambiente \mintinline{bash}{AHIO_PATH} funciona como a variável
 \mintinline{bash}{PATH} dos sistemas \textit{UNIX}.
 
-Os \textit{drivers} padrão são: \textit{snap7, Arduino, GenericTCPIO, Raspberry} ou
-\textit{Dummy}. Nesse módulo, representada na Figura~\ref{fig:hardware1}, pode-se
-configurar o \textit{driver} desejado. Primeiramente deve-se selecionar o
-\textit{driver} na lista. Duas seções serão abertas ao selecionar um
-\textit{driver}: Configuração e Portas.
+Os \textit{drivers} padrão são: \textit{snap7, Arduino, GenericTCPIO, Raspberry}
+ou \textit{Dummy}. Nesse módulo, representado na Figura~\ref{fig:hardware1},
+pode-se configurar o \textit{driver} desejado. Primeiramente deve-se selecionar
+o \textit{driver} na lista. Duas seções serão abertas ao selecionar um
+\textit{driver}: \textit{Configuração} e \textit{Portas}.
 
 \begin{figure}[ht!]
     \centering
@@ -53,8 +53,8 @@ CLP\@.
 
 A seção \textit{Portas} (Figura~\ref{fig:hardware3}) permite a configuração das
 entradas e saídas do sistema. Ao clicar em \textit{Adicionar} uma nova entrada
-em branco é inserida. Ela contém as seguintes colunas: Nome da porta, Alias da
-porta, Tipo de porta, Valor desligado.
+em branco é inserida. Ela contém as seguintes colunas: \textit{Nome da porta},
+\textit{Alias da porta}, \textit{Tipo de porta}, \textit{Valor desligado}.
 
 \begin{figure}[ht!]
     \centering
@@ -105,8 +105,8 @@ portas.
     \label{fig:hardware4}
 \end{figure}
 
-Como as portas serão ligadas depende se ela é uma entrada ou saída. No caso de
-entrada, a nova porta \textit{Alias} recebe o valor da expressão quando se
+Como as portas serão relacionadas depende se ela é uma entrada ou saída. No caso
+de entrada, a nova porta \textit{Alias} recebe o valor da expressão quando se
 substitui o valor de x pelo valor da porta selecionada. No caso de saída, o
 contrário. Tomando os valores preenchidos como exemplo, temos:
 
@@ -123,8 +123,8 @@ e
 Na seção \textit{Intertravamento} (Figura~\ref{fig:hardware5}) é possível
 configurar expressões que, quando verdadeiras, irão definir o valor de outra
 variável, além de parar o teste. Exemplo disso é o intertravamento em um sistema
-de tanques comunicantes, caso o nível de água ultrapasse 70 centímetros, o teste
-é parado e a variável \textit{SystemOnOff} assume valor zero, desligando o
+de tanques comunicantes, onde, caso o nível de água ultrapasse 70 centímetros, o
+teste é parado e a variável \textit{SystemOnOff} assume valor zero, desligando o
 sistema.
 
 \begin{figure}[ht!]
