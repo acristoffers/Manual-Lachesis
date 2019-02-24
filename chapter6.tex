@@ -18,12 +18,12 @@ podemos ver a listagem de gráficos com as opções pertinentes. O botão
     \label{fig:graphs1}
 \end{figure}
 
-Ao clicar em \textit{Exibir}, a seção \textit{Gráficos} será exibida. A seção
-\textit{Exportar} também aparecerá, mas apenas caso o teste não esteja em
-execução. A seção \textit{Exportar} é retrátil, se expandindo ao clicar no
-título ou botão no lado direito. Na Figura~\ref{fig:graphs2} pode-se ver a seção
-expandida. No topo pode-se selecionar o formato dos dados exportados:
-\href{https://www.json.org/}{JSON},
+Ao clicar em \textit{Exibir} (\img{imgs/show_chart}), a seção \textit{Gráficos}
+será exibida. A seção \textit{Exportar} também aparecerá, mas apenas caso o
+teste não esteja em execução. A seção \textit{Exportar} é retrátil, se
+expandindo ao clicar no título ou botão no lado direito. Na
+Figura~\ref{fig:graphs2} pode-se ver a seção expandida. No topo pode-se
+selecionar o formato dos dados exportados: \href{https://www.json.org/}{JSON},
 \href{https://pt.wikipedia.org/wiki/Comma-separated_values}{CSV} ou
 \href{https://www.mathworks.com/help/matlab/import_export/supported-file-formats.html}{MAT}.
 
@@ -64,11 +64,20 @@ de cada curva na mesma cor da linha utilizada no gráfico, além do valor no pon
 atual. O valor eixo \(x\), que sempre representa o tempo em segundos, é exibido
 antes de todas as variáveis.
 
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.9\textwidth]{imgs/graphs4}
+    \caption[Teste em execução]{Teste em execução}%
+    \label{fig:graphs4}
+\end{figure}
+
 Quando um teste está em execução, ele é marcado com o símbolo
-\includegraphics[height=\fontcharht\font`\B]{imgs/running}. Os gráficos de um
-teste em execução são atualizados a cada segundo. Essa atualização requer
-considerável processamento pelo aplicativo \textbf{moirai}, sendo recomendado
-não manter o módulo \textit{Gráficos} aberto durante a execução de um teste em
-um computador com baixo poder de processamento. A lista de gráficos disponíveis
-também é atualizada a cada segundo, fazendo com que um teste em execução não
-seja listado imediatamente, mas após alguns segundos.
+\img{imgs/running}, como pode ser visto na Figura~\ref{fig:graphs4}. O botão
+\textit{Remover} (\img{imgs/remove}) é substituído pelo botão \textit{Parar}
+(\img{imgs/stop}). Os gráficos de um teste em execução são atualizados a cada
+segundo. Essa atualização requer considerável processamento pelo aplicativo
+\textbf{moirai}, sendo recomendado não manter o módulo \textit{Gráficos} aberto
+durante a execução de um teste em um computador com baixo poder de
+processamento. A lista de gráficos disponíveis também é atualizada a cada
+segundo, fazendo com que um teste em execução não seja listado imediatamente,
+mas após alguns segundos.
