@@ -55,13 +55,19 @@ Seguem as maneiras mais fáceis de se instalar o \textit{Python} no
 \begin{itemize}
 \item \textbf{Windows}
         Baixe e instale o \textit{bundle}
-        \href{https://www.continuum.io/downloads}{\textit{Anaconda}}.
+        \href{https://www.continuum.io/downloads}{\textit{Anaconda}}. Embora o
+        instalador diga que não é recomendado adicioná-lo ao \textit{PATH}, isso
+        facilita que outros aplicativos encontrem o Python no sistema. Isso fará
+        diferença caso você deseje utilizar a linguagem fora do
+        \textbf{Lachesis}.
 
 \item \textbf{Ubuntu}
+        Execute em um terminal (console):\\
         \mintinline{bash}{sudo apt install python3-scipy python3-matplotlib}
 
 \item \textbf{macOS}
         Instale o \textit{Homebrew}: \url{https://brew.sh}\\
+        Execute em um terminal:\\
         \mintinline{bash}{brew install python3}\\
         \mintinline{bash}{pip3 install numpy matplotlib}
 \end{itemize}
